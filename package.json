@@ -14,7 +14,8 @@
   },
   "scripts": {
     "test": "vitest run",
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "seed": "tsx scripts/seed.ts"
   },
   "keywords": [],
   "author": "",
