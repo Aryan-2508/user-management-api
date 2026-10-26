@@ -133,7 +133,7 @@ export async function updateUser(
     };
 
     try {
-    
+
         const user = await User.findByIdAndUpdate(
             id,
             data,
