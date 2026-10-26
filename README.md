@@ -10,6 +10,7 @@ A RESTful API built with Node.js, TypeScript, Express, and MongoDB.
 - Validate request data using Zod
 - Centralized error handling
 - Integration tests using Vitest and Supertest
+- Database seeding for development and testing
 
 ## Tech Stack
 
@@ -67,6 +68,40 @@ For integration tests, configure `TEST_MONGO_URL` to point to a dedicated test d
 ```bash
 npm run dev
 ```
+
+## Database Seeding
+
+The project includes a seed script at `scripts/seed.ts` for inserting sample data into MongoDB.
+
+Seeding is useful for local development and manual API testing because it lets you populate the database with sample user records without creating them individually through API requests.
+
+### Run the seed script
+
+```bash
+npm run seed
+```
+
+This command assumes the `seed` script is configured in `package.json`.
+
+For example:
+
+```json
+{
+  "scripts": {
+    "seed": "tsx scripts/seed.ts"
+  }
+}
+```
+
+Use the command above only if your project uses `tsx` to execute TypeScript scripts. Adjust it to match your existing dependencies and configuration.
+
+### Seed script considerations
+
+- Ensure `MONGO_URL` is configured before running the script.
+- Run the seed script against a development database, not production.
+- Check whether the script inserts new records, updates existing records, or deletes existing data before executing it.
+- Consider making the script idempotent so repeated runs do not create unintended duplicate users.
+- Never commit database credentials or other secrets to version control.
 
 ## API Endpoints
 
