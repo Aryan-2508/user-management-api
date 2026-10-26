@@ -43,6 +43,16 @@ async function seedDatabase(): Promise<void> {
           runValidators: true,
         },
       );
+
+
+
+
+
+
+
+
+
+      
     }
 
     console.log(`Seed completed: ${seedUsers.length} sample users processed.`);
